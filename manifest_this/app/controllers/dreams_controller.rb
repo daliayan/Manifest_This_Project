@@ -10,3 +10,8 @@ class DreamsController < ApplicationController
     
 
 end
+
+# separation of concerns and single responsibility
+
+#The go-between for models and views. The controller relays 
+#data from the browser to the application, and from the application to the browser.

@@ -1,1 +1,19 @@
-edit a manifestation~ post
+<%# <div class="topnav">
+    <a class="active" href="#home">Homepage</a>
+    <a href="#Manifestations">
+</div> %>
+
+
+<title> Edit your Manifestation </title>
+<form method="POST" action="/dreams/<%= @dream.id %>">
+
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    
+    Edit Manifestation Title: <input type="text" name="dream[title]" value="<%= @dream.title %>" /><br>
+    Edit Manifestation: <input type="text" name="dream[content]" value="<%= @dream.content %>" /><br>
+    Edit Manifestation Date: <input type="text" name="dream[entry_date]" value="<%= @dream.entry_date %>" /><br>
+</form>
+
+<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+
+<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

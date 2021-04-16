@@ -1,1 +1,19 @@
-Iterating through each post | my manifestations~|
+-Have to create a if logged_in conditional statement
+-Have to create an entry id
+
+<h3>~ Welcome ~</h3>
+<h2>May all your manifestations come to fruition:</h2>
+
+
+<% @dreams.each do |dream|%>
+    <div>
+    <a href="/dreams/<%= dream.id %>">
+        <%= dream.title %>
+        <%= dream.entry_date %>
+        <%= dream.content %>
+    </div>
+<% end %>
+
+<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+
+<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

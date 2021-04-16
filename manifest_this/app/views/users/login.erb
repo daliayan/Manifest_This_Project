@@ -1,1 +1,14 @@
 #Welcomes the user and allows them to sign login to their account
+
+<h1>Welcome! May all of your manifestations come to fruition</h1>
+
+<form method="POST" action="/login">
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="password_digest" placeholder="password">
+
+    <input type="submit" name="submit">
+</form>
+
+<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+
+<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

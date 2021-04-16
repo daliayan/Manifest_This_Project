@@ -6,3 +6,17 @@ Controller action that allows me to make a new route (user)!!
 Allows them to login or to sign up 
 
 <h3>Make an account here <h3>
+
+<form method="POST" action="/signup">
+    <input name="username" type="username">
+    <input name="password_digest" type="password">
+
+    <input type="submit" name="submit">
+
+</form>
+
+
+<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+
+<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>
+ 

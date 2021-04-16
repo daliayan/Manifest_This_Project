@@ -1,4 +1,5 @@
-# The purpose of this file is to detail to Rack teh enviorment requirements of this app and the start of the app
+# The purpose of this file is to detail to Rack teh enviorment 
+#requirements of this app and the start of the app
 
 require './config/environment'
 

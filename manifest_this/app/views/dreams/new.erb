@@ -1,3 +1,25 @@
 Controller action that allows me to make a new route (dream ~manifest~)!!
 
-Create a new manifestation post
+<h2> Create a new manifestation post </h2>
+
+<form action="/dreams" method="POST">
+
+    <label for="title">Manifestation Title:</label><br>
+    <input type="text" name="title" /><br>
+
+    <label for="entry_date">Entry Date:</label><br>
+    <input type="text" name="entry_date" /><br>
+
+
+    <label for="content">Write your manifestations here:</label><br>
+    <input type="text" name="content" /><br>
+
+    <input type="submit" name="submit" value="New Manifestation">
+
+</form>
+
+<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+
+<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>
+
+
