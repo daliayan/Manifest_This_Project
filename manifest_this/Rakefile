@@ -1,4 +1,8 @@
 ENV["SINATRA_ENV"] ||= "development"
 
-require_relative './config/environment'
-require 'sinatra/activerecord/rake'
+require_relative './config/environment' #convenient method to use when you are referring to a file that is relative to the current file you are working on
+require 'sinatra/activerecord/rake' #require= method used when want to reference&execute code that is not written in current file
+
+task :console do    # rake console - allows me to test models and database
+    Pry.start 
+end
