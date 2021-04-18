@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     
 end
 
+#CRUD: Create, Read, Update, Destroy
+
 # separation of concerns and single responsibility
 
 #The go-between for models and views. The controller relays data 
