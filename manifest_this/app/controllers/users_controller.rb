@@ -1,11 +1,25 @@
+#Browsers send requests, and servers send responses
+#USING 7 HTTP(HYPER TEXT TRANSFER PROTOCOL) REQUESTS (get/post/put/delete/patch...)
+
 class UsersController < ApplicationController
 
+    get '/signup' do
+        erb :'users/new'
+    end
 
-    #get user signup / post sign up
-    #get user login in / post log in
+    post '/signup' do
+    end
 
-    #get log out
-    
+    get '/login' do
+        erb :'users/login'
+    end
+
+    post '/login' do
+    end
+
+    get '/logout' do
+    end
+
 end
 
 #CRUD: Create, Read, Update, Destroy

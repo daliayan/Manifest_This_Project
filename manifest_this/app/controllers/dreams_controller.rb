@@ -1,40 +1,44 @@
+#Browsers send requests, and servers send responses
+#USING 7 HTTP(HYPER TEXT TRANSFER PROTOCOL) REQUESTS (get/post/put/delete/patch...)
+#Making dynamic web apps that change - not static that stay the same!
+
 class DreamsController < ApplicationController
 
-    #Allows me to GET all of my dreams ~manifestations~ READ's file
+    #Displays a list of all Dreams
     get '/dreams' do 
         @dreams = Dream.all
         erb :'dreams/index'
     end
 
-    #Allows me to view the form that CREATES a dream ~manifestation~
+    #Returns an HTML form to create a new Dream
     get '/dreams/new' do
         erb :'dreams/new'
     end
 
-    #Allows me to get one dream ~manifestiation~ READ's file
+    #Allows me to display ONE dream ~manifestiation~ READ's file
     get '/dreams/:id' do
         @dream = Dream.find(params[:id])
         erb :'dreams/show'
     end
 
-    #Creates a new dream ~manifestation~
+    #Creates a new dream ~manifestation~ - Send data from user to the server
     post '/dreams' do
     end
 
-    #Allows me to view and edit one particular dream ~manifestation~
+    #Returns an HTML form to view and edit one particular dream ~manifestation~
     get '/dreams/:id/edit' do
         @dream = Dream.find(params[:id])
         erb :'dreams/edit'
     end
 
-    #Allows me to update one particular dream ~manifestation~
+    #Allows me to UPDATE one particular dream ~manifestation~
     patch '/dreams/:id' do
         @dream = Dream.find(params[:id])
         @dream.update(params["dream"])
         redirect "/dreams/#{@dream.id}"
     end
 
-    #Allows me to destroy an dream ~manifestation entry~
+    #Allows me to DELETE an dream ~manifestation entry~
     delete "dreams/:id" do
         @dream = Dream.find(param[:id])
         @dream.destroy

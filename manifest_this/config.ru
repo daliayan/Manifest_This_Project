@@ -1,5 +1,5 @@
-# The purpose of this file is to detail to Rack teh enviorment 
-#requirements of this app and the start of the app
+# detail to Rack the environment requirements of the application and start the application.
+# .ru - rack up
 
 require './config/environment'
 

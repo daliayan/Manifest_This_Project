@@ -2,7 +2,7 @@
 #We do this by running ActiveRecord::Base
 
 class Dream < ActiveRecord::Base
-    belongs_to :user               
+    belongs_to :user           #Active Record Macros - macro is a method that writes code for me! (belongs_to)    
 end
 
 # ActiveRecord is responsible for representing model data and logic
