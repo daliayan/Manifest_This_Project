@@ -43,7 +43,7 @@ class DreamController < ApplicationController
 
     #Allows me to DELETE an dream ~manifestation entry~     - DELETE
     delete "/dreams/:id" do
-        @dream = Dream.find(param[:id])
+        @dream = Dream.find(params[:id])
         @dream.destroy
         redirect '/dreams'                      # - makes a new get request
     end
