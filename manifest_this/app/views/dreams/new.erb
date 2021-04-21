@@ -1,20 +1,20 @@
-Controller action that allows me to make a new route (dream ~manifest~)!!
 
-<h2> Create a new manifestation post </h2>
+
+<title> Create a new manifestation post: </title>
 
 <form action="/dreams" method="POST">
 
     <label for="title">Manifestation Title:</label><br>
-    <input type="text" name="title" /><br>
+   <p> <input type="text" name="title" /></p><br>
 
     <label for="entry_date">Entry Date:</label><br>
-    <input type="text" name="entry_date" /><br>
+    <p><input type="text" name="entry_date" /></p><br>
 
 
     <label for="content">Write your manifestations here:</label><br>
-    <input type="text" name="content" /><br>
+    <p><textarea cols="50" rows="10" name="content"> </textarea></p><br>
 
-    <input type="submit" name="submit" value="New Manifestation">
+    <input type="submit" name="submit" id="submit" value="New Manifestation">
 
 </form>
 
@@ -23,3 +23,4 @@ Controller action that allows me to make a new route (dream ~manifest~)!!
 <%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>
 
 
+<%# Controller action that allows me to make a new route (dream ~manifest~)!!  %>

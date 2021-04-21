@@ -10,20 +10,22 @@ class DreamController < ApplicationController
         erb :'dreams/index'     #matched the request to a controller action
     end
 
+     #Returns an HTML form to create a new Dream
+     get '/dreams/new' do
+        erb :'dreams/new'
+    end
+
     #Allows me to display ONE dream ~manifestiation~ READ's file
     get '/dreams/:id' do
         @dream = Dream.find_by(params[:id])                                                #This is invoked (block - btwn do&end)
         erb :'dreams/show'          
     end
 
-    #Returns an HTML form to create a new Dream
-    get '/dreams/new' do
-        erb :'dreams/new'
-    end
-
-    
     #Creates a new dream ~manifestation~ - Send data from user to the server
     post '/dreams' do
+        @dream = Dream.new(params)
+        @dream.save
+        redirect '/dreams'
     end
 
     #Returns an HTML form to view and edit ONE particular dream ~manifestation~
@@ -45,8 +47,6 @@ class DreamController < ApplicationController
         @dream.destroy
         redirect "/dreams"      #matched the request to a controller action
     end
-    
-
 end
 
 #CRUD: Create, Read, Update, Destroy
