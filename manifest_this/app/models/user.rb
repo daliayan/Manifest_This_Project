@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     has_secure_password         #Building out a domain model that associates classes via has many/belongs to
 end
 
-# ActiveRecord is responsible for representing model data and logic
+# ActiveRecord is responsible for representing !!!!model data and logic!!!!
  #Base class for all Sinatra applications and middleware.
 
 #Backend information - not directly working with the user, encapsulate the data specific to the application

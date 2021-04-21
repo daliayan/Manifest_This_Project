@@ -1,13 +1,16 @@
-#Welcomes the user and allows them to sign login to their account
-
-<h1>Welcome! May all of your manifestations come to fruition</h1>
+<h1>Welcome! Returning users can login below:</h1>
 
 <form method="POST" action="/login">
-    <input type="text" name="username" placeholder="username">
-    <input type="text" name="password_digest" placeholder="password">
+    Username:<input type="text" name="username" placeholder="username">
+    Password:<input type="text" name="password_digest" placeholder="password">
 
-    <input type="submit" name="submit">
+    <input type="submit" value="login">
 </form>
+
+<p>May all of your manifestations come to fruition.</p>
+
+
+#erb files allow us to include regular, old HTML tags AND special erb tags
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
 

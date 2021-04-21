@@ -2,7 +2,7 @@ ENV["SINATRA_ENV"] = "test"
 
 require_relative '../config/environment'
 require 'rack/test'
-require 'capybara/rspec'
+require 'capybara/rspec'      #The Capybara library allows us to write code that simulates how a user interacts with our app
 require 'capybara/dsl'
 
 if ActiveRecord::Migrator.needs_migration?
@@ -33,4 +33,4 @@ def app
   Rack::Builder.parse_file('config.ru').first
 end
 
-Capybara.app = app
+Capybara.app = app    #The Capybara library allows us to write code that simulates how a user interacts with our app
