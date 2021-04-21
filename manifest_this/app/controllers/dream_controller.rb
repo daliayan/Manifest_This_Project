@@ -4,48 +4,48 @@
 
 class DreamController < ApplicationController
 
-    #Displays a list of all Dreams
+    #Displays a list of all Dreams - READ
     get '/dreams' do 
         @dreams = Dream.all
-        erb :'dreams/index'     #matched the request to a controller action
+        erb :'dreams/index'                         #stays in the request
     end
 
-     #Returns an HTML form to create a new Dream
+     #Returns an HTML form to create a new Dream - CREATE
      get '/dreams/new' do
-        erb :'dreams/new'
+        erb :'dreams/new'                               #stays in the request
     end
 
-    #Allows me to display ONE dream ~manifestiation~ READ's file
+    #Allows me to display ONE dream ~manifestiation~ - READ
     get '/dreams/:id' do
-        @dream = Dream.find_by(params[:id])                                                #This is invoked (block - btwn do&end)
-        erb :'dreams/show'          
+        @dream = Dream.find(params[:id])                                                #This is invoked (block - btwn do&end)
+        erb :'dreams/show'                          #stays in the request
     end
 
-    #Creates a new dream ~manifestation~ - Send data from user to the server
+    #Send data from user to the server              - CREATE
     post '/dreams' do
         @dream = Dream.new(params)
         @dream.save
-        redirect '/dreams'
+        redirect '/dreams'                          #makes a new get request
     end
 
-    #Returns an HTML form to view and edit ONE particular dream ~manifestation~
+    #Returns an HTML form to view/edit ONE particular dream - UPDATE shows form
     get '/dreams/:id/edit' do                                                           #get is the method 
-        @dream = Dream.find_by(params[:id])                                                #This is invoked (block - btwn do&end)
-        erb :'dreams/edit'
+        @dream = Dream.find(params[:id])                                                #This is invoked (block - btwn do&end)
+        erb :'dreams/edit'                          #stays in the request
     end
 
-    #Allows me to UPDATE one particular dream ~manifestation~
+    #Allows me to UPDATE one particular dream ~manifestation~ - UPDATE - processes form
     patch '/dreams/:id' do                                          #patch is the method
-        @dream = Dream.find_by(params[:id])                            #This is invoked (block - btwn do&end)
+        @dream = Dream.find(params[:id])                            #This is invoked (block - btwn do&end)
         @dream.update(params["dream"])
-        redirect "/dreams/#{@dream.id}"     #matched the request to a controller action
+        redirect "/dreams/#{@dream.id}"     #matched the request to a controller action - makes a new get request
     end
 
-    #Allows me to DELETE an dream ~manifestation entry~
-    delete "dreams/:id" do
+    #Allows me to DELETE an dream ~manifestation entry~     - DELETE
+    delete "/dreams/:id" do
         @dream = Dream.find(param[:id])
         @dream.destroy
-        redirect "/dreams"      #matched the request to a controller action
+        redirect '/dreams'                      # - makes a new get request
     end
 end
 

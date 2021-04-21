@@ -1,15 +1,26 @@
-Show route which allows me to show one dream (writing ~manifestation~)
+<h2>All of your Manifestations:</h2>
+
+    <p>Title: <%= @dream.title %> </p>          <%# ? @dream.title : "Please provide a title" %>
+
+    <p>Date: <%= @dream.entry_date %> </p>      <%# ? @dream.entry_date : "Please provide a date" %>
+
+    <p>Manifestation: <%= @dream.content %></p> <%# ? @dream.content || "Please provide content" %>
+
+    <p><a href="/dreams/<%= @dream.id%>/edit">Edit Manifestation</a></p>
+    
+
+    <form method="POST" action="/dreams/<%= @dream.id%>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="DELETE MANIFESTATION">
+    </form> <br>
+
+
+<%# Show route which allows me to show one dream (writing ~manifestation~)
 
 show title
 Show content
 show date
-add user_id
-
-    <h2>These are your manifestations</h2>
-    <title>Manifestation Title: <%= @dream.title %> </title><br>
-    <p>Manifestation Date: <%= @dream.entry_date %> </p>
-    <p>Manifestation: <%= @dream.content %></p>
-
+add user_id  %>
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
 
