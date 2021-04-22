@@ -13,7 +13,15 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
     "Manifest your every dream." 
   end
 
-  helpers do
+  helpers do    #views can access this method
+
+    def logged_in?
+      !!current_user
+    end
+
+    def current_user    #memoization
+      @current_user ||= User.find(session[:user_id]) if session[:user_id] #or/equals so you can find the current user once
+    end
     
   end
   

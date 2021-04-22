@@ -1,5 +1,9 @@
-<h2>May all your manifestations come to fruition:</h2>
-<%# <h3>Logged in User: <%= User.find(session[:user_id]).username  </h3> %>
+<h1>May all your manifestations come to fruition:</h1>
+
+    <% if logged_in?%>
+        <h3>Current User: <%= current_user.username %></h3> <%##referencing my method %>
+    <%end%>
+
     <% @dreams.each do |dream|%>
         <div>
             <ul>

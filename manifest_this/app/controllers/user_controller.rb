@@ -22,18 +22,11 @@ class UserController < ApplicationController
       end
     end
 
-    # get '/login' do
-    #     if logged_in?
-    #       @user_name = params[:user_id]
-    #       erb :login
-    #     else
-    #       redirect '/users/signup'
-    #     end
-    # end
+    get '/logout' do
+      session.clear #clears session
+      redirect '/signup' 
+    end
     
-    # get '/signup' do
-    #     erb :'users/new'
-    # end
 
     # post '/login' do
     #     @user_name = User.new(:user_id => current_user[:id], :username => params[:username], :password => params[:password])
