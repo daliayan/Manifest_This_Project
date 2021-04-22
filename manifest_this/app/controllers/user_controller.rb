@@ -10,16 +10,16 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
-      binding.pry
-      @user = User.new(params) #params is a hash with key value pairs
 
-      if user.username.blank? || user.password.blank? || User.find(params[:username])
+      user = User.new(:username => params[:username], :password => params[:password]) #params is a hash with key value pairs
+
+      if user.username.blank? || user.password.blank?
         redirect '/signup'
       else
-
+        user.save
+        session[:user_id] = user.id #adding key/value pairs to my session - saves session specific to user
+        redirect '/dreams'
       end
-
-
     end
 
     # get '/login' do
@@ -42,8 +42,8 @@ class UserController < ApplicationController
 
    
 
-    get '/logout' do
-    end
+    # get '/logout' do
+    # end
 
 end
 

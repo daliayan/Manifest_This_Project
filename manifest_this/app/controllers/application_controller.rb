@@ -12,6 +12,10 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
   get '/' do 
     "Manifest your every dream." 
   end
+
+  helpers do
+    
+  end
   
 end
 
