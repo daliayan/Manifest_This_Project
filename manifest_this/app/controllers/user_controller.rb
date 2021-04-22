@@ -5,23 +5,40 @@
 
 class UserController < ApplicationController
 
-    get '/login' do
-        if logged_in?
-          @user_name = params[:user_id]
-          erb :login
-        else
-          redirect '/users/signup'
-        end
+    get '/signup' do
+        erb :"users/new"
     end
+
+    post '/signup' do
+      binding.pry
+      @user = User.new(params) #params is a hash with key value pairs
+
+      if user.username.blank? || user.password.blank? || User.find(params[:username])
+        redirect '/signup'
+      else
+
+      end
+
+
+    end
+
+    # get '/login' do
+    #     if logged_in?
+    #       @user_name = params[:user_id]
+    #       erb :login
+    #     else
+    #       redirect '/users/signup'
+    #     end
+    # end
     
     # get '/signup' do
     #     erb :'users/new'
     # end
 
-    post '/login' do
-        @user_name = User.new(:user_id => current_user[:id], :username => params[:username], :password => params[:password])
-        # if !User.all.includes(@user_name)
-    end
+    # post '/login' do
+    #     @user_name = User.new(:user_id => current_user[:id], :username => params[:username], :password => params[:password])
+    #     # if !User.all.includes(@user_name)
+    # end
 
    
 

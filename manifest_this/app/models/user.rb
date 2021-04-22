@@ -2,8 +2,9 @@
 #We do this by running ActiveRecord::Base
 
 class User < ActiveRecord::Base  
-    has_many :dreams                  #Active Record Macros - macro is a method that writes code for me! (has_many)    
-    has_secure_password         #Building out a domain model that associates classes via has many/belongs to
+    has_many :dreams                  #ActiveRecord Macros - macro gives me many method that writes code for me! (has_many)    
+    has_secure_password         #ActiveRecord method used on my User class
+    #provides reader and writer method for passwords
 end
 
 # ActiveRecord is responsible for representing !!!!model data and logic!!!!

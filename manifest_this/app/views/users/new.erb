@@ -1,16 +1,16 @@
-<h3>New user? Make an account below:<h3>
+<h2>New user? Make an account below:</h2>
 
 <form method="POST" action="/signup">
-    Username:<input name="username" type="username">
-    Password:<input name="password_digest" type="password">
+   <p> Username: <input name="username" type="username"></p><br>
+    Password: <input name="password" type="password">
 
-    <input type="submit" id="Submit" value="signup">
+    <input type="submit" value="signup">
 </form>
-
+<br>
 <p>May all of your manifestations come to fruition.</p>
 
 
-#erb files allow us to include regular, old HTML tags AND special erb tags
+<%# #erb files allow us to include regular, old HTML tags AND special erb tags
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
 
