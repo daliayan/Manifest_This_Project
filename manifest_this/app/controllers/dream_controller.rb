@@ -12,31 +12,38 @@ class DreamController < ApplicationController
 
      #Returns an HTML form to create a new Dream - CREATE
      get '/dreams/new' do
+        if !logged_in?
+            redirect '/login' #leave method to make them login
+        end
         erb :'dreams/new'                               #stays in the request
     end
 
     #Allows me to display ONE dream ~manifestiation~ - READ
     get '/dreams/:id' do
-        @dream = Dream.find(params[:id])                                                #This is invoked (block - btwn do&end)
+        # redirect_deflect                                             #This is invoked (block - btwn do&end)
+        @dream = Dream.find(params[:id])  
         erb :'dreams/show'                          #stays in the request
     end
 
     #Send data from user to the server              - CREATE
     post '/dreams' do
-        @dream = Dream.new(params)
+        # redirect_deflect
+        @dream = current_user.dreams.build(params)
         @dream.save
         redirect '/dreams'                          #makes a new get request
     end
 
     #Returns an HTML form to view/edit ONE particular dream - UPDATE shows form
-    get '/dreams/:id/edit' do                                                           #get is the method 
-        @dream = Dream.find(params[:id])                                                #This is invoked (block - btwn do&end)
-        erb :'dreams/edit'                          #stays in the request
+    get '/dreams/:id/edit' do                                                #get is the method 
+        @dream = Dream.find(params[:id])
+        # redirect_deflect
+        erb :'dreams/edit'          #stays in the request
     end
 
     #Allows me to UPDATE one particular dream ~manifestation~ - UPDATE - processes form
     patch '/dreams/:id' do                                          #patch is the method
         @dream = Dream.find(params[:id])                            #This is invoked (block - btwn do&end)
+        # redirect_deflect
         @dream.update(params["dream"])
         redirect "/dreams/#{@dream.id}"     #matched the request to a controller action - makes a new get request
     end
@@ -44,6 +51,7 @@ class DreamController < ApplicationController
     #Allows me to DELETE an dream ~manifestation entry~     - DELETE
     delete "/dreams/:id" do
         @dream = Dream.find(params[:id])
+        # redirect_deflect
         @dream.destroy
         redirect '/dreams'                      # - makes a new get request
     end

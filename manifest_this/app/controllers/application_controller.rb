@@ -24,6 +24,13 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
     end
     
   end
+
+  private
+    def redirect_deflect
+        if @dream.user != current_user.username           #leave method to make them login           
+            redirect '/dreams'
+        end 
+    end
   
 end
 

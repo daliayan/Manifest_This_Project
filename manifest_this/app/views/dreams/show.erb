@@ -6,13 +6,15 @@
 
     <p>Manifestation: <%= @dream.content %></p> <%# ? @dream.content || "Please provide content" %>
 
-    <p><a href="/dreams/<%= @dream.id%>/edit">Edit Manifestation</a></p>
-    
+    <% if @dream.user == current_user %>
 
-    <form method="POST" action="/dreams/<%= @dream.id%>">
-        <input type="hidden" name="_method" value="DELETE">
-        Did you manifestation come true? Delete it here: <input type="submit" value="DELETE MANIFESTATION">
-    </form> <br>
+        <p><a href="/dreams/<%= @dream.id%>/edit">Edit Manifestation</a></p>
+        
+        <form method="POST" action="/dreams/<%= @dream.id%>">
+            <input type="hidden" name="_method" value="DELETE">
+            Did you manifestation come true? Delete it here: <input type="submit" value="DELETE MANIFESTATION">
+        </form> <br>
+    <% end %>
 
 
 <%# Show route which allows me to show one dream (writing ~manifestation~)

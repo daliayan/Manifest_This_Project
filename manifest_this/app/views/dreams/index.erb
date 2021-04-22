@@ -1,9 +1,5 @@
 <h1>May all your manifestations come to fruition:</h1>
-
-    <% if logged_in?%>
-        <h3>Current User: <%= current_user.username %></h3> <%##referencing my method %>
-    <%end%>
-
+    <a>Current User: <%= current_user.username %></a>   
     <% @dreams.each do |dream|%>
         <div>
             <ul>
@@ -18,8 +14,13 @@
     <% end %>
 
 
+<%# <% if logged_in?
+    <h3>Current User: <%= current_user.username </h3>%> <%##referencing my method
+<%end%>
+
 <%# -Have to create a if logged_in conditional statement %>
 <%#-Have to create an entry id  %>
+
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
 

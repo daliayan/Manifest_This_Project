@@ -22,9 +22,25 @@ class UserController < ApplicationController
       end
     end
 
+    get '/login' do #login form
+      erb :"/users/login"
+    end
+
+    post '/login' do #uploads the form
+      @user = User.find_by_username(params[:username])
+
+      if @user && @user.authenticate(params[:password]) #authenticate is an active records method
+        session[:user_id] = @user.id
+        redirect '/dreams'
+      else
+        redirect '/login'
+      end
+      
+    end
+
     get '/logout' do
       session.clear #clears session
-      redirect '/signup' 
+      redirect '/login' 
     end
     
 
