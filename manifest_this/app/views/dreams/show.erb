@@ -8,13 +8,18 @@
 
     <% if @dream.user == current_user %>
 
-        <p><a href="/dreams/<%= @dream.id%>/edit">Edit Manifestation</a></p>
+        <p><a href="/dreams/<%= @dream.id%>/edit" style="font-size:12pt; color:blue;">Edit Manifestation</a></p>
         
         <form method="POST" action="/dreams/<%= @dream.id%>">
             <input type="hidden" name="_method" value="DELETE">
-            Did you manifestation come true? Delete it here: <input type="submit" value="DELETE MANIFESTATION">
+            Did you manifestation come true? Delete it here: <input type="submit" value="DELETE MANIFESTATION" style="font-size:10pt; color:red;">
         </form> <br>
     <% end %>
+
+
+<%# <% if logged_in? %>
+       <%# <h3>Current User:<%= current_user.username %> <%##referencing my method %>
+    <%# <%end%>
 
 
 <%# Show route which allows me to show one dream (writing ~manifestation~)
