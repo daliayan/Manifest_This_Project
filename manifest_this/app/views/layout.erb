@@ -15,13 +15,14 @@
   </head>
   <body>
     <div class="wrapper">
-      <div>
-      ⁂ <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
-        <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ↹
-        <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ↹
-        <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
-        <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ⁂
+     ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
+      <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
+       <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
+      <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ↹
+        <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂
       </div>
+
+    <div>
       <%= yield %>
 
         <footer>
@@ -36,3 +37,19 @@
     <![endif]-->
   </body>
 </html>
+ 
+
+
+
+      <%# <nav>
+          <% if logged_in? %>
+            
+            <%# ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
+            <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
+            <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂
+            <p>Welcome <%= @current_user.username %> 
+          <%# <% else %>
+            <%# ⁂ <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
+            <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ⁂
+          <% end %>
+    

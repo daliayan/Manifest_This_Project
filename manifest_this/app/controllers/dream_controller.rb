@@ -13,7 +13,7 @@ class DreamController < ApplicationController
      #Returns an HTML form to create a new Dream - CREATE
      get '/dreams/new' do
         if !logged_in?
-            redirect '/login' #leave method to make them login
+            redirect '/login'
         end
         erb :'dreams/new'                               #stays in the request
     end
@@ -54,6 +54,13 @@ class DreamController < ApplicationController
         # redirect_deflect
         @dream.destroy
         redirect '/dreams'                      # - makes a new get request
+    end
+
+    private
+    def not_logged_in
+        if @dream.user != current_user.username           #leave method to make them login           
+            redirect '/dreams'
+        end 
     end
 end
 

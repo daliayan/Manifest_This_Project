@@ -2,13 +2,16 @@
 
 <form method="POST" action="/signup">
    <p> Username: <input name="username" type="username"></p><br>
-    Password: <input name="password" type="password">
+   <p> Password: <input name="password" type="password">
 
-    <input type="submit" value="signup">
+    <input type="submit" value="signup"></p><br>
 </form>
-<br>
+
 <p style="font-size:12pt; color:darkgreen;">May all of your manifestations come to fruition.</p>
 
+<%# <% if @dream.user == current_user %>
+    <%# <p><a href="/dreams/index"></p>
+<% end %>
 
 <%# #erb files allow us to include regular, old HTML tags AND special erb tags
 
