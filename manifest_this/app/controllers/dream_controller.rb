@@ -12,7 +12,7 @@ class DreamController < ApplicationController
 
      #Returns an HTML form to create a new Dream - CREATE
      get '/dreams/new' do
-        if !logged_in?
+        if logged_in?
             redirect '/login'
         end
         erb :'dreams/new'                               #stays in the request
