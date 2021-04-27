@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
 
   helpers do    #views can access this method
     def logged_in?
-      !!current_user[:user_id]
+      !!current_user
     end
 
     def current_user    #memoization
@@ -23,12 +23,12 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
     end 
   end
 
-  # private
-    # def not_logged_in
-    #     if !logged_in?           #leave method to make them login           
-    #       redirect '/login'
-    #     end 
-    # end
+  private
+    def not_logged_in
+        if !logged_in?           #leave method to make them login           
+          redirect '/login'
+        end 
+    end
 end
 
 

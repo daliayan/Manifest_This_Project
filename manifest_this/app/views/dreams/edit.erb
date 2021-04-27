@@ -1,12 +1,12 @@
 <title> Edit your Manifestation </title>
 
-<form method="POST" action="/dreams/<%= @dream.id %>">
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
-    <p>Edit Title: <input type="text" name="dream[title]" value="<%= @dream.title %>" /></p><br>
-    <p>Edit Completion date: <input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" /></p><br>
-    <p>Edit Manifestation: <input type="text" name="dream[content]" cols="500" rows="10" value="<%= @dream.content %>" /></p><br>
-    <p><input type="submit" value="Update Manifestation" /></p>
-</form>
+    <form method="POST" action="/dreams/<%= @dream.id %>">
+        <input type="hidden" name="_method" value="PATCH">
+        <p>Edit Title: <input type="text" name="dream[title]" value="<%= @dream.title %>" /></p><br>
+        <p>Edit Completion date: <input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" /></p><br>
+        <p>Edit Manifestation: <input type="text" name="dream[content]" cols="500" rows="10" value="<%= @dream.content %>" /></p><br>
+        <p><input type="submit" value="Update Manifestation" /></p>
+    </form>
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
 

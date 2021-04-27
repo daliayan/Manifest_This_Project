@@ -6,7 +6,11 @@
 class UserController < ApplicationController
 
  get '/signup' do
-    erb :"users/new"
+    if !session[:user_id]
+      erb :'users/new'
+    else
+      redirect to '/dreams'
+    end
   end
 
   post '/signup' do
@@ -31,7 +35,7 @@ class UserController < ApplicationController
       session[:user_id] = @user.id
       redirect '/dreams'
     else
-      redirect '/login'
+      redirect '/signup'
     end
   end
 

@@ -6,7 +6,7 @@
 
     <p>Manifestation: <%= @dream.content %></p> <%# ? @dream.content || "Please provide content" %>
 
-    <% if @dream.user_id == current_user.id %>
+    <% if @dream.user_id == current_user %>
 
         <p><a href="/dreams/<%= @dream.id%>/edit" style="font-size:12pt; color:blue;">Edit Manifestation</a></p>
         
