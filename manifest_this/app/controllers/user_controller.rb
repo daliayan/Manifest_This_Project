@@ -25,7 +25,11 @@ class UserController < ApplicationController
   end
 
   get '/login' do #login form
-    erb :"/users/login"
+    if !session[:user_id]
+      erb :'/users/login'
+    else
+      redirect '/dreams'
+    end
   end
 
   post '/login' do #uploads the form

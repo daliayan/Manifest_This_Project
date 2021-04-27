@@ -40,8 +40,8 @@ class DreamController < ApplicationController
 
     #Allows me to UPDATE one particular dream ~manifestation~ - UPDATE - processes form
     patch '/dreams/:id' do                                          #patch is the method
-        @dream = Dream.find(params[:id])  
-        # redirect_unknown_user                          #This is invoked (block - btwn do&end)
+        @dream = Dream.find(params[:id]) 
+        redirect_unknown_user                           #This is invoked (block - btwn do&end)
         @dream.update(params["dream"])
         redirect "/dreams/#{@dream.id}"     #matched the request to a controller action - makes a new get request
     end

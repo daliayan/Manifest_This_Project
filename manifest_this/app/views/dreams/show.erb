@@ -1,4 +1,4 @@
-<h2>All of your Manifestations:</h2>
+<h2>Manifestation:</h2>
 
     <p>Title: <%= @dream.title %> </p>          <%# ? @dream.title : "Please provide a title" %>
 
@@ -6,8 +6,7 @@
 
     <p>Manifestation: <%= @dream.content %></p> <%# ? @dream.content || "Please provide content" %>
 
-    <% if @dream.user_id == current_user %>
-
+    <% if @dream.user == current_user %>
         <p><a href="/dreams/<%= @dream.id%>/edit" style="font-size:12pt; color:blue;">Edit Manifestation</a></p>
         
         <form method="POST" action="/dreams/<%= @dream.id%>">
