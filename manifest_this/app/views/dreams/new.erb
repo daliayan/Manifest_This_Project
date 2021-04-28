@@ -3,22 +3,22 @@
 <form action="/dreams" method="POST">
 
     <label for="title">Manifestation Title:</label><br>
-   <p> <input type="text" name="title" /></p><br>
+   <p> <input type="text" name="title" placeholder="Enter Title Here" /></p><br>
 
     <label for="entry_date">When do you want to complete this Manifestation by? </label><br>
     <p><input type="datetime-local" name="entry_date" /></p><br>
 
 
     <label for="content">Write your manifestations here:</label><br>
-    <p><textarea type="text" cols="50" rows="10" name="content"> </textarea></p><br>
+    <p><textarea type="text" cols="50" rows="10" name="content" > </textarea></p><br>
 
     <input type="submit"  value="New Manifestation"><br>
 
 </form>
 <br>
 
-<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+<%# Substitution Tags: ONLY READS TAG displays /  Inserts the value of an expression <%=  @Words  %>
 
-<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>
+<%# ## Scripting Tags:  READS AND DISPLAYS TAG only interpolated / Executes code, but does not insert a value   <% @Words %>
 
 <%# Controller action that allows me to make a new route (dream ~manifest~)!!  %>

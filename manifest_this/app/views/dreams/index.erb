@@ -1,34 +1,23 @@
-<h1>⋐ May all your manifestations come to fruition ⋑</h1>
+
+<h1>•.May all of your manifestations come to fruition.•</h1>
 
 <% if logged_in? %>
      <h3>Current User: <%= current_user.username %></h3><%##referencing my method %>
 <% end %>
 
+<% @dreams.each do |dream|%>
+    <div>
+        <ul style="list-style: none;">
+            <li> <a href="/dreams/<%= dream.id %>" style="font-size:13pt; color:black; text-decoration: none;"> 
+                <%= dream.title %><br>
+                <%= dream.entry_date %><br>
+                <%= dream.content %><br>
+                <br>
+            </li>
+        </ul>   
+    </div>
+<% end %>
 
-    <% @dreams.each do |dream|%>
-        <div>
-            <ul>
-                <li> <a href="/dreams/<%= dream.id %>" style="font-size:13pt; color:black;"> 
-                    <%= dream.title %><br>
-                    <%= dream.entry_date %><br>
-                    <%= dream.content %><br>
-                    <br>
-                </li>
-            </ul>   
-        </div>
-    <% end %>
-
-
-
-<%# <% if logged_in?
-    <h3>Current User: <%= current_user.username </h3>%> <%##referencing my method %>
-<%# <%end %>
-
-<%# <a>Current User: <%= current_user.username</a>    %>
-
-
-<%# -Have to create a if logged_in conditional statement %>
-<%#-Have to create an entry id  %>
 
 
 <%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>

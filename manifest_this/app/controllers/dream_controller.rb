@@ -7,20 +7,20 @@ class DreamController < ApplicationController
     #Displays a list of all Dreams - READ
     get '/dreams' do 
         @dreams = Dream.all
-        erb :'dreams/index'                         #stays in the request
+        erb :'dreams/index'           #stays in the request - GET requests render an erb file to display an applications current state
     end
 
      #Returns an HTML form to create a new Dream - CREATE
      get '/dreams/new' do
         not_logged_in
-        erb :'dreams/new'                               #stays in the request
+        erb :'dreams/new'                 #stays in the request - GET requests render an erb file to display an applications current state
     end
 
     #Allows me to display ONE dream ~manifestiation~ - READ
     get '/dreams/:id' do
-        not_logged_in                                            #This is invoked (block - btwn do&end)
+        not_logged_in                               #This is invoked (block - btwn do&end)
         @dream = Dream.find(params[:id])  
-        erb :'dreams/show'                          #stays in the request
+        erb :'dreams/show'                       #stays in the request - GET requests render an erb file to display an applications current state
     end
 
     #Send data from user to the server              - CREATE
@@ -28,14 +28,14 @@ class DreamController < ApplicationController
         not_logged_in
         @dream = current_user.dreams.build(params)
         @dream.save
-        redirect '/dreams'                          #makes a new get request
+        redirect '/dreams'                      # redirect to another route after the controller changes the state of the application
     end
 
     #Returns an HTML form to view/edit ONE particular dream - UPDATE shows form
-    get '/dreams/:id/edit' do                                                #get is the method 
+    get '/dreams/:id/edit' do                           #get is the method 
         @dream = Dream.find(params[:id])
         redirect_unknown_user
-        erb :'dreams/edit'          #stays in the request
+        erb :'dreams/edit'                         #stays in the request - GET requests render an erb file to display an applications current state
     end
 
     #Allows me to UPDATE one particular dream ~manifestation~ - UPDATE - processes form
@@ -43,7 +43,7 @@ class DreamController < ApplicationController
         @dream = Dream.find(params[:id]) 
         redirect_unknown_user                           #This is invoked (block - btwn do&end)
         @dream.update(params["dream"])
-        redirect "/dreams/#{@dream.id}"     #matched the request to a controller action - makes a new get request
+        redirect "/dreams/#{@dream.id}"     ## redirect to another route after the controller changes the state of the application
     end
 
     #Allows me to DELETE an dream ~manifestation entry~     - DELETE
@@ -51,13 +51,13 @@ class DreamController < ApplicationController
         @dream = Dream.find(params[:id])
         redirect_unknown_user
         @dream.destroy
-        redirect '/dreams'                      # - makes a new get request
+        redirect '/dreams'                 ## redirect to another route after the controller changes the state of the application
     end
 
     private
     def redirect_unknown_user
-        if @dream.user != current_user.username           #leave method to make them login           
-            redirect '/dreams'
+        if @dream.user != current_user                     
+            redirect '/dreams'              ## redirect to another route after the controller changes the state of the application
         end 
     end
 end

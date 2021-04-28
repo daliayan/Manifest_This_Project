@@ -16,11 +16,6 @@
     <% end %>
 
 
-<%# <% if logged_in? %>
-       <%# <h3>Current User:<%= current_user.username %> <%##referencing my method %>
-    <%# <%end%>
-
-
 <%# Show route which allows me to show one dream (writing ~manifestation~)
 
 show title
@@ -28,6 +23,6 @@ Show content
 show date
 add user_id  %>
 
-<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
+<%# Substitution Tags: ONLY READS TAG displays /  Inserts the value of an expression <%=  @Words  %>
 
-<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>
+<%# ## Scripting Tags: READS & DISPLAYS only interpolated / Executes code, but does not insert a value   <% @Words %>

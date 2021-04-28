@@ -13,19 +13,27 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body>
+  <body style="background-color:#EAF9EA; text-align:justify;">
     <div class="wrapper">
-     ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
-      <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
-       <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
-      <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ↹
-        <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂
-      </div>
+     
+      <% if logged_in? %>   
+        ¸,ø¤º°`°º¤ø,¸¸,ø¤º° <a href="/dreams" style="font-size:16pt; color:RebeccaPurple;">All Manifestations</a> ↹
+          <a href="/dreams/new" style="font-size:16pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
+          <a href="/logout" style="font-size:16pt; color:RebeccaPurple;">Logout</a> °º¤ø,¸¸,ø¤º°`°º¤ø, 
+      <% else %>
+            <p></p>
+            <p></p>
+            <p></p>
+          °º¤ø,¸¸,ø¤º°`°º¤ø, <a href="/signup" style="font-size:16pt; color:RebeccaPurple;">Create Account</a> ↹
+          <a href="/login" style="font-size:16pt; color:RebeccaPurple;" >Returning User Login</a> °º¤ø,¸¸,ø¤º°`°º¤ø,
+      <% end %>
+     
+    </div>
 
     <div>
       <%= yield %>
-
         <footer>
+        <p></p>
           <p><a href="/dreams"><small>&copy; 2021 <strong>Manifest This</strong></small></a></p>
         </footer>
     </div>
@@ -53,3 +61,9 @@
             <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ⁂
           <% end %>
     
+
+    <%# ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
+      <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
+       <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
+      <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ↹
+        <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂ %>
