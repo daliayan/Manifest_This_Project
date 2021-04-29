@@ -3,16 +3,16 @@
 <form action="/dreams" method="POST">
 
     <label for="title">Manifestation Title:</label><br>
-   <p> <input type="text" name="title" placeholder="Enter Title Here" /></p><br>
+   <p> <input type="text" name="title" placeholder="Enter Title Here" required/></p><br>
 
     <label for="entry_date">When do you want to complete this Manifestation by? </label><br>
-    <p><input type="datetime-local" name="entry_date" /></p><br>
+    <p><input type="datetime-local" name="entry_date" required/></p><br>
 
 
     <label for="content">Write your manifestations here:</label><br>
-    <p><textarea type="text" cols="50" rows="10" name="content" > </textarea></p><br>
+    <p><input type="textarea" style="width: 300px; height: 300px" name="content" required /></p><br>
 
-    <input type="submit"  value="New Manifestation"><br>
+    <input type="submit"  value="Submit Manifestation"><br>
 
 </form>
 <br>

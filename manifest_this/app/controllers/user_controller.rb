@@ -5,18 +5,22 @@
 
 class UserController < ApplicationController
 
+  get '/error' do
+    erb :'/error'
+  end
+
  get '/signup' do
     if !session[:user_id]
       erb :'users/new'
     else
-      redirect to '/dreams'
+      redirect '/error'
     end
   end
 
   post '/signup' do
     user = User.new(:username => params[:username], :password => params[:password]) #params is a hash with key value pairs
     if params[:username] == "" || params[:password] == ""
-      redirect '/signup'
+      redirect '/error'
     else
       user.save
       session[:user_id] = user.id #adding key/value pairs to my session - saves session specific to user
@@ -39,7 +43,7 @@ class UserController < ApplicationController
       session[:user_id] = @user.id
       redirect '/dreams'
     else
-      redirect '/signup'
+      redirect '/login'
     end
   end
 

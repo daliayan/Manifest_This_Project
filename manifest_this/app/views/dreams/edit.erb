@@ -2,9 +2,15 @@
 
     <form method="POST" action="/dreams/<%= @dream.id %>">
         <input type="hidden" name="_method" value="PATCH">
-        <p>Edit Title: <input type="text" name="dream[title]" value="<%= @dream.title %>" /></p><br>
-        <p>Edit Completion date: <input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" /></p><br>
-        <p>Edit Manifestation: <input type="text" name="dream[content]" cols="500" rows="10" value="<%= @dream.content %>" /></p><br>
+
+        <h3>Edit Title: </h3> 
+        <p><input type="text" name="dream[title]" value="<%= @dream.title %>" required/></p><br>
+
+        <h3>Edit Completion date: </h3>
+        <p><input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" required/></p><br>
+
+        <h3>Edit Manifestation: </h3>
+        <p><input type="textarea" name="dream[content]" style="width: 90%; height: 30px" value="<%= @dream.content %>" required/></p><br>
         <p><input type="submit" value="Update Manifestation" /></p>
     </form>
 
