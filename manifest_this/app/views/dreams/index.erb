@@ -1,8 +1,8 @@
 
-<h1>May all of your <em>manifestations</em> come to fruition</h1>
+<h1 style="text-indent: 50px;">May all of your <em>manifestations</em> come to fruition</h1>
 
 <% if logged_in? %>
-     <h3>Current User: <%= current_user.username %></h3><%##referencing my method %>
+     <p style="font-size:14pt; text-indent:50px;"><strong>Current User: <%= current_user.username %></strong></p>
 <% end %>
 
 <% @dreams.each do |dream|%>
@@ -17,9 +17,3 @@
         </ul>   
     </div>
 <% end %>
-
-
-
-<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
-
-<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

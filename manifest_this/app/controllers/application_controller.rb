@@ -1,6 +1,6 @@
 require './config/environment'
 
-class ApplicationController < Sinatra::Base  # Created the App controller that inherits from Sinatra Base - has Sinatra functionality
+class ApplicationController < Sinatra::Base
 
   configure do
     set :public_folder, 'public'
@@ -13,28 +13,20 @@ class ApplicationController < Sinatra::Base  # Created the App controller that i
     erb :index 
   end
 
-  helpers do    #views can access this method
+  helpers do
     def logged_in?
       !!current_user
     end
 
-    def current_user    #memoization
+    def current_user
       current_user ||= User.find_by(id: session[:user_id])
-    end 
+    end
   end
 
   private
     def not_logged_in
-        if !logged_in?           #leave method to make them login           
+        if !logged_in?         
           redirect '/login'
         end 
     end
 end
-
-
-# separation of concerns and single responsibility
-
-#The go-between for models and views. 
-#The controller relays data from the browser to the application,
-#and from the application to the browser.
-

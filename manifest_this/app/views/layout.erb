@@ -13,19 +13,19 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body style="background-color:#e6e6ff; text-align:justify; border: 3px solid #ffcc00; padding: 4px">
+  <body style="background-color:#e6e6ff; text-align:justify; padding: 4px">
     <div class="wrapper">
      
       <% if logged_in? %>   
-        ¸,ø¤º°`°º¤ø, <a href="/dreams" style="font-size:16pt; color:#00004d;">All Manifestations</a> ↹
-          <a href="/dreams/new" style="font-size:16pt; color:#00004d;">Create a new Manifestation</a> ↹
-          <a href="/logout" style="font-size:16pt; color:#00004d;">Logout</a> °º¤ø,¸¸,ø¤º° 
+        ¸,ø¤º°`°º¤ø, <a href="/dreams" style="font-size:14pt; color:#00004d;">All Manifestations</a> ↹
+          <a href="/dreams/new" style="font-size:14pt; color:#00004d;">Create a new Manifestation</a> ↹
+          <a href="/logout" style="font-size:14pt; color:#00004d;">Logout</a> °º¤ø,¸¸,ø¤º° 
       <% else %>
             <p></p>
             <p></p>
             <p></p>
-          °º¤ø,¸¸,ø¤º° <a href="/signup" style="font-size:16pt; color:#00004d;">Create Account</a> ↹
-          <a href="/login" style="font-size:16pt; color:#00004d;" >Returning User Login</a> ¸¸,ø¤º°`°º¤ø,
+          °º¤ø,¸¸,ø¤º° <a href="/signup" style="font-size:14pt; color:#00004d;">Create Account</a> ↹
+          <a href="/login" style="font-size:14pt; color:#00004d;" >Returning User Login</a> ¸¸,ø¤º°`°º¤ø,
       <% end %>
      
     </div>
@@ -45,25 +45,3 @@
     <![endif]-->
   </body>
 </html>
- 
-
-
-
-      <%# <nav>
-          <% if logged_in? %>
-            
-            <%# ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
-            <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
-            <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂
-            <p>Welcome <%= @current_user.username %> 
-          <%# <% else %>
-            <%# ⁂ <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
-            <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ⁂
-          <% end %>
-    
-
-    <%# ⁂ <a href="/dreams" style="font-size:14pt; color:RebeccaPurple;">All Manifestations</a> ↹
-      <a href="/dreams/new" style="font-size:14pt; color:RebeccaPurple;">Create a new Manifestation</a> ↹
-       <a href="/signup" style="font-size:14pt; color:RebeccaPurple;">Create Account</a> ↹
-      <a href="/login" style="font-size:14pt; color:RebeccaPurple;">Returning User Login</a> ↹
-        <a href="/logout" style="font-size:14pt; color:RebeccaPurple;">Logout</a> ⁂ %>

@@ -1,62 +1,46 @@
-#Browsers send requests, and servers send responses
-#USING 7 HTTP(HYPER TEXT TRANSFER PROTOCOL) REQUESTS (get/post/put/delete/patch...)
-
-# REST: Representational State Transfer
-
 class UserController < ApplicationController
 
   get '/error' do
     erb :'/error'
   end
+  
+  get '/reused' do
+    erb :'/reused'
+  end
 
  get '/signup' do
-    if !session[:user_id]
-      erb :'users/new'
-    else
-      redirect '/error'
-    end
+    erb :'users/new'
   end
 
   post '/signup' do
-    user = User.new(:username => params[:username], :password => params[:password]) #params is a hash with key value pairs
-    if params[:username] == "" || params[:password] == ""
-      redirect '/error'
+    user = User.new(:username => params[:username], :password => params[:password])
+    if User.find_by_username(params[:username])
+      redirect '/reused'
     else
       user.save
-      session[:user_id] = user.id #adding key/value pairs to my session - saves session specific to user
+      session[:user_id] = user.id 
       redirect '/dreams'
     end
   end
 
-  get '/login' do #login form
-    if !session[:user_id]
-      erb :'/users/login'
-    else
-      redirect '/dreams'
-    end
+  get '/login' do
+    erb :'/users/login'
   end
 
-  post '/login' do #uploads the form
+  post '/login' do
     @user = User.find_by_username(params[:username])
 
-    if @user && @user.authenticate(params[:password]) #authenticate is an active records method
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect '/dreams'
     else
-      redirect '/login'
+      redirect '/error'
     end
   end
 
   get '/logout' do
-      session.clear #clears session
+      session.clear
       redirect '/login'
   end
 
 end
-
-#CRUD: Create, Read, Update, Destroy
-
-# separation of concerns and single responsibility
-
-#The go-between for models and views. The controller relays data 
-#from the browser to the application, and from the application to the browser.

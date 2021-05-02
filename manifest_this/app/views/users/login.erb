@@ -2,19 +2,10 @@
 <p> </p>
 <p> </p>
 <form method="POST" action="/login">
-    <p>Username: <input type="username" name="username" /></p><br>
-    Password: <input type="password" name="password" >
+    <p>Username: <input type="username" name="username" required/></p><br>
+    Password: <input type="password" name="password" required />
 
     <input type="submit" value="login">
 </form>
 <br>
 <p style="font-size:12pt; color:#00004d;"><a href="/dreams" style="text-decoration: none;">May all of your manifestations come to fruition.</a></p>
-
-
-<%# ActiveRecord allows me to input the type "password" instead of password_digest behind the scenes
-
-#erb files allow us to include regular, old HTML tags AND special erb tags  %>
-
-<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
-
-<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

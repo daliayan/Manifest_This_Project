@@ -7,4 +7,3 @@ class CreateUsers < ActiveRecord::Migration[5.2]
   end
 end
 
-#uses password_digest because we DO NOT store regular passwords in the database

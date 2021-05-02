@@ -4,16 +4,13 @@
         <input type="hidden" name="_method" value="PATCH">
 
         <h3>Edit Title: </h3> 
-        <p><input type="text" name="dream[title]" value="<%= @dream.title %>" required/></p><br>
+        <p><input type="text" name="dream[title]" value="<%= @dream.title %>" required/></p>
 
         <h3>Edit Completion date: </h3>
-        <p><input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" required/></p><br>
+        <p><input type="datetime-local" name="dream[entry_date]" value="<%= @dream.entry_date %>" required/></p>
 
         <h3>Edit Manifestation: </h3>
-        <p><input type="textarea" name="dream[content]" style="width: 90%; height: 30px" value="<%= @dream.content %>" required/></p><br>
+        <p><input type="textarea" name="dream[content]" style="width: 500px; height: 40px;" value="<%= @dream.content %>" required/></p><br>
+        
         <p><input type="submit" value="Update Manifestation" /></p>
     </form>
-
-<%# Substitution Tags: displays /  Inserts the value of an expression <%=  @Words  %>
-
-<%# ## Scripting Tags: only interpolated / Executes code, but does not insert a value   <% @Words %>

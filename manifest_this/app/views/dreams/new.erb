@@ -1,24 +1,18 @@
-<h2> Create a new manifestation post: </h2>
+<p style="font-size:14pt; text-indent: 15px;"><strong>CREATE A NEW MANIFESTATION: </strong></p>
 
 <form action="/dreams" method="POST">
 
-    <label for="title">Manifestation Title:</label><br>
-   <p> <input type="text" name="title" placeholder="Enter Title Here" required/></p><br>
+    <label for="title" style="font-size: 13pt;">Manifestation Title:</label><br>
+   <p><input type="text" name="title" placeholder="Enter Title Here" required/></p><br>
 
-    <label for="entry_date">When do you want to complete this Manifestation by? </label><br>
+    <label for="entry_date" style="font-size: 13pt;">When do you want to complete this Manifestation by? </label><br>
     <p><input type="datetime-local" name="entry_date" required/></p><br>
 
 
-    <label for="content">Write your manifestations here:</label><br>
-    <p><input type="textarea" style="width: 300px; height: 300px" name="content" required /></p><br>
+    <label for="content" style="font-size: 13pt;">Write your manifestations here:</label><br>
+    <p><input type="text" style="width: 90%; height: 30px" name="content" required /></p><br>
 
     <input type="submit"  value="Submit Manifestation"><br>
 
 </form>
 <br>
-
-<%# Substitution Tags: ONLY READS TAG displays /  Inserts the value of an expression <%=  @Words  %>
-
-<%# ## Scripting Tags:  READS AND DISPLAYS TAG only interpolated / Executes code, but does not insert a value   <% @Words %>
-
-<%# Controller action that allows me to make a new route (dream ~manifest~)!!  %>

@@ -1,28 +1,17 @@
-<h2>Manifestation:</h2>
+ <p style="font-size:15pt"><strong>⋆ Title: </strong></p> <p style="font-size:13pt; text-indent: 30px;"> <%= @dream.title %> </p> 
 
-    <p>Title: <%= @dream.title %> </p>          <%# ? @dream.title : "Please provide a title" %>
+<p style="font-size:15pt"><strong>✧ Goal date: </strong></p> <p style="font-size:13pt; text-indent: 30px;"> <%= @dream.entry_date %> </p>
 
-    <p>Date: <%= @dream.entry_date %> </p>      <%# ? @dream.entry_date : "Please provide a date" %>
+<p style="font-size:15pt"><strong>▹ Manifestation: </strong></p> <p style="font-size:13pt; text-indent: 30px;"> <%= @dream.content %></p>
 
-    <p>Manifestation: <%= @dream.content %></p> <%# ? @dream.content || "Please provide content" %>
+<br><p><a href="/dreams" style="text-decoration: none;"><strong>BACK TO HOMEPAGE</strong></a><p>
 
-    <% if @dream.user == current_user %>
+<% if @dream.user == current_user %>
+    <p>━☆━☆━━☆━━☆━☆━━☆━━☆━☆━━☆━━☆━━☆━☆━━☆</p>
         <p><a href="/dreams/<%= @dream.id%>/edit" style="font-size:12pt; color:blue;">Edit Manifestation</a></p>
         
         <form method="POST" action="/dreams/<%= @dream.id%>">
             <input type="hidden" name="_method" value="DELETE">
             Did you manifestation come true? Delete it here: <input type="submit" value="DELETE MANIFESTATION" style="font-size:10pt; color:red;">
-        </form> <br>
-    <% end %>
-
-
-<%# Show route which allows me to show one dream (writing ~manifestation~)
-
-show title
-Show content
-show date
-add user_id  %>
-
-<%# Substitution Tags: ONLY READS TAG displays /  Inserts the value of an expression <%=  @Words  %>
-
-<%# ## Scripting Tags: READS & DISPLAYS only interpolated / Executes code, but does not insert a value   <% @Words %>
+        </form>
+<% end %>
