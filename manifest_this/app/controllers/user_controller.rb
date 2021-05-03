@@ -1,11 +1,11 @@
 class UserController < ApplicationController
 
   get '/error' do
-    erb :'/error'
+    erb :error
   end
   
   get '/reused' do
-    erb :'/reused'
+    erb :reused
   end
 
  get '/signup' do
