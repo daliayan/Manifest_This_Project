@@ -42,11 +42,4 @@ class DreamController < ApplicationController
         @dream.destroy
         redirect '/dreams'  
     end
-
-    private
-    def redirect_unknown_user
-        if @dream.user != current_user                  
-            redirect '/dreams'
-        end
-    end
 end

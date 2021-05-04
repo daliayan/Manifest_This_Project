@@ -5,7 +5,7 @@ class UserController < ApplicationController
   end
   
   get '/reused' do
-    erb :reused
+    erb :reused 
   end
 
  get '/signup' do

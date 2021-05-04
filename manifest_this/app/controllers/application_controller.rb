@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
+    
     def logged_in?
       !!current_user
     end
@@ -24,9 +25,17 @@ class ApplicationController < Sinatra::Base
   end
 
   private
-    def not_logged_in
-        if !logged_in?         
-          redirect '/login'
-        end 
+
+  def not_logged_in
+      if !logged_in?         
+        redirect '/login'
+      end 
+  end
+
+  def redirect_unknown_user
+    if @dream.user != current_user                  
+      redirect '/dreams'
     end
+  end
+
 end
