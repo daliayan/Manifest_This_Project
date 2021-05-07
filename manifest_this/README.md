@@ -1,5 +1,3 @@
-# Using Sessions
-
 ## Objectives
 
 1. Creating an application using Ruby and Sinatra
