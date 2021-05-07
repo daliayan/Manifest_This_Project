@@ -16,6 +16,9 @@ class UserController < ApplicationController
     user = User.new(:username => params[:username], :password => params[:password])
     if User.find_by_username(params[:username])
       redirect '/reused'
+    elsif
+      params[:username] == "" || params[:password] == ""
+      redirect '/error'
     else
       user.save
       session[:user_id] = user.id 
